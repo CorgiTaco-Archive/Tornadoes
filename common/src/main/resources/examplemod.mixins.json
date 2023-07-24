@@ -9,7 +9,8 @@
     "dev.MinecraftServerFastSpawnMixin"
   ],
   "client": [
-    "MixinMinecraft"
+    "MixinMinecraft",
+    "client.MixinGameRenderer"
   ],
   "server": [
   ],

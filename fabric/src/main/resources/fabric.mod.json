@@ -17,6 +17,9 @@
     "entrypoints": {
         "main": [
           "dev.corgitaco.examplemod.ExampleMod"
+        ],
+        "client":[
+            "dev.corgitaco.examplemod.client.ModFabricClient"
         ]
     },
     "mixins": [
@@ -32,6 +35,7 @@
     },
     "suggests": {
         "another-mod": "*"
-    }
+    },
+    "accessWidener": "examplemod.accesswidener"
 }
   
