@@ -76,9 +76,15 @@ public class TornadoEntityRenderer extends EntityRenderer<TornadoEntity> {
     private static void renderTornado(TornadoEntity tornado, PoseStack matrices, MultiBufferSource vertexConsumers, int height) {
         matrices.pushPose();
         VertexConsumer tornadoBuffer = vertexConsumers.getBuffer(ModRendertypes.TORNADO.apply(LOCATION, true));
-        renderTornado(tornado, matrices, height, 0.3F, 1F, 0.85F, 0.85F, 0.85F, 1, tornadoBuffer, 13, (float) GLFW.glfwGetTime() * 200, true, 100);
-        renderTornado(tornado, matrices, height, 0.4F, 0.8F, 0.75F, 0.75F, 0.75F, 1, tornadoBuffer, 11.5F, (float) GLFW.glfwGetTime() * 200, true, 200);
-        renderTornado(tornado, matrices, height, 0.5F, 0.6F, 0.6F, 0.6F, 0.6F, 1, tornadoBuffer, 10, (float) GLFW.glfwGetTime() * 200, true, 500);
+
+        int fSize = 10;
+        boolean renderInverse = true;
+        renderTornado(tornado, matrices, height, 0.0F, 1F, 0.6F, 0.6F, 0.6F, 1, tornadoBuffer, 35, (float) GLFW.glfwGetTime() * 200, renderInverse, 3346);
+        renderTornado(tornado, matrices, height, 0.2F, 1F, 0.6F, 0.6F, 0.6F, 1, tornadoBuffer, 30, (float) GLFW.glfwGetTime() * 200, renderInverse, 54231);
+        renderTornado(tornado, matrices, height, 0.4F, 1F, 0.6F, 0.6F, 0.6F, 1, tornadoBuffer, 25, (float) GLFW.glfwGetTime() * 200, renderInverse, 2132);
+        renderTornado(tornado, matrices, height, 0.6F, 1F, 0.6F, 0.6F, 0.6F, 1, tornadoBuffer, 20, (float) GLFW.glfwGetTime() * 200, renderInverse, 23324);
+        renderTornado(tornado, matrices, height, 0.8F, 0.8F, 0.6F, 0.6F, 0.6F, 1, tornadoBuffer, 15, (float) GLFW.glfwGetTime() * 200, renderInverse, 200);
+        renderTornado(tornado, matrices, height, 1, 0.6F, 0.6F, 0.6F, 0.6F, 1, tornadoBuffer, 10, (float) GLFW.glfwGetTime() * 200, renderInverse, 500);
         matrices.popPose();
     }
 
@@ -100,7 +106,7 @@ public class TornadoEntityRenderer extends EntityRenderer<TornadoEntity> {
             for (float heightDelta = 0; heightDelta < height; heightDelta += increment) {
                 int hPoints = 7;
 
-                float nextDistance = distance + Mth.nextFloat(randomSource, -0.2F, 1F);
+                float nextDistance = distance + Mth.nextFloat(randomSource, -0.4F, 2F);
 
                 for (int hPoint = -hPoints; hPoint < hPoints; hPoint++) {
                     float hPct = (float) hPoint / hPoints;
